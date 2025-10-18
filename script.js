@@ -2,15 +2,15 @@
 const CONFIG = {
     sheetURL: "https://script.google.com/macros/s/AKfycby58yDY-wSsb6Y5kzxRWZ7NlaxP26EYQNHVELdJ4JRgsXWtGtxml5SYQ5ab7iFsrU1Oow/exec",
     participationIdPrefix: {
-        "astro-craft": "AC",
-        "moon-modeling": "MM",
-        "essay": "EW",
-        "quiz": "AQ"
+        "ai-fundamentals": "AIF",
+        "machine-learning": "MLW",
+        "deep-learning": "DLW",
+        "ai-applications": "AIA"
     },
     classOptions: [
-        "Class 5", "Class 6", "Class 7", "Class 8", 
+        "Class 8", 
         "Class 9", "Class 10", "Class 11", "Class 12",
-        "College Student", "Teacher", "Other"
+        
     ]
 };
 
@@ -125,15 +125,15 @@ function submitForm() {
 
     // Format programme names for display
     const programmeDisplayNames = {
-        "astro-craft": "Astro-Craft Workshop",
-        "moon-modeling": "Moon Modeling Workshop",
-        "essay": "Essay Writing Competition",
-        "quiz": "Astronomy Quiz"
+        "ai-fundamentals": "AI Fundamentals Workshop",
+        "machine-learning": "Machine Learning Workshop", 
+        "deep-learning": "Deep Learning Workshop",
+        "ai-applications": "AI Applications Workshop"
     };
 
     // Generate participation IDs for each selected programme
     selectedProgrammes.forEach(programme => {
-        const prefix = CONFIG.participationIdPrefix[programme] || "MD";
+        const prefix = CONFIG.participationIdPrefix[programme] || "AI";
         const randomNum = Math.floor(100 + Math.random() * 900);
         participationIds[programme] = `${prefix}${new Date().getFullYear().toString().slice(-2)}-${randomNum}`;
     });
@@ -157,9 +157,11 @@ function submitForm() {
     // Show mandatory requirement message
     const requirementMessage = `
         <div class="requirement-notice">
-            <h4><i class="fas fa-exclamation-circle"></i> Mandatory Requirement</h4>
-            <p>Please bring <strong>1 OREO Biscuit pack (Small Size 10 Rs. Pack)</strong> to participate in the workshop.</p>
-            <p>This is compulsory for all participants.</p>
+            <h4><i class="fas fa-exclamation-circle"></i> Important Information</h4>
+            <p>Workshop Dates: <strong>19th, 21st & 22nd October 2025</strong></p>
+            <p>Time: <strong>11:00 AM - 1:30 PM</strong></p>
+            <p>Venue: <strong>DSC Auditorium</strong></p>
+            <p>Resource Person: <strong>Dr. Bibhatshu Kuiri, Assistant Professor, Dept. of Physics, Chandigarh University</strong></p>
         </div>
     `;
 
